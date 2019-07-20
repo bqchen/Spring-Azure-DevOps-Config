@@ -13,11 +13,13 @@ spring:
     gateway:
       discovery:
         locator:
-          enabled: false
+          enabled: true
           lowerCaseServiceId: true
       routes:
-        - id: app-service
+        - id: APP-SERVICE
 #          uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8070/home
+          uri: lb://APP-SERVICE
           predicates:
-            - Path=/home
+#            - Path=/home
+            - Path=/APP-SERVICE/**
           stripPrefix: false
