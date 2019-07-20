@@ -17,12 +17,7 @@ spring:
           lowerCaseServiceId: true
       routes:
         - id: app-service
-<<<<<<< HEAD
 #          uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8070/home
           predicates:
             - Path=/home
           stripPrefix: false
-=======
-          predicates:
-            - Path=/home
->>>>>>> faa7af62e67a7d8cfbf381e9e156522be3537dd8
