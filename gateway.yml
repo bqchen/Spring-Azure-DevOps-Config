@@ -20,6 +20,6 @@ spring:
 #          uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8070/home
           uri: lb://APP-SERVICE
           predicates:
-#            - Path=/home
-            - Path=/APP-SERVICE/**
+            - Path=/home
+#            - Path=/APP-SERVICE/**
           stripPrefix: false
