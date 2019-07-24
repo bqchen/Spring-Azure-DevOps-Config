@@ -1,12 +1,12 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
-  instance:
-    prefer-ip-address: true
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+#   instance:
+#     prefer-ip-address: true
 
-server:
-  port: 8060
+# server:
+#   port: 8060
 
 ribbon:
   ReadTimeout: 20000

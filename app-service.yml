@@ -1,14 +1,14 @@
-eureka:
-  client:
-    service-url:
-      defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
-  instance:
-    metadata-map:
-      user.name: ${spring.security.user.name}
-      user.password: ${spring.security.user.password}
+# eureka:
+#   client:
+#     service-url:
+#       defaultZone: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8761/eureka/
+#   instance:
+#     metadata-map:
+#       user.name: ${spring.security.user.name}
+#       user.password: ${spring.security.user.password}
 
-server:
-  port: 8070
+# server:
+#   port: 8070
 
 spring:
   security:
