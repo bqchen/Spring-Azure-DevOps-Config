@@ -8,18 +8,37 @@ eureka:
 server:
   port: 8060
 
-spring:
-  cloud:
-    gateway:
-      discovery:
-        locator:
-          enabled: true
-          lowerCaseServiceId: true
-      routes:
-        - id: APP-SERVICE
-#          uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8070/home
-          uri: lb://APP-SERVICE
-          predicates:
-            - Path=/home
-#            - Path=/APP-SERVICE/**
-          stripPrefix: false
+ribbon:
+  ReadTimeout: 20000
+  ConnectTimeout: 20000
+  eureka:
+    enabled: true
+
+zuul:
+  ignoredServices: '*'
+  host:
+    connect-timeout-millis: 20000
+    socket-timeout-millis: 20000
+
+  routes:
+    app-service:
+      path: /app-service/**
+      serviceId: app-service
+#      stripPrefix: false
+#      sensitiveHeaders:
+
+#spring:
+#  cloud:
+#    gateway:
+#      discovery:
+#        locator:
+#          enabled: true
+#          lowerCaseServiceId: true
+#      routes:
+#        - id: APP-SERVICE
+##          uri: http://user:${REGISTRY_SERVER_PASSWORD:password}@registry:8070/home
+#          uri: lb://APP-SERVICE
+#          predicates:
+#            - Path=/home
+##            - Path=/APP-SERVICE/**
+#          stripPrefix: false
