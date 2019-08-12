@@ -9,8 +9,8 @@
 #   port: 8060
 
 ribbon:
-  ReadTimeout: 20000
-  ConnectTimeout: 20000
+  ReadTimeout: 10000
+  ConnectTimeout: 10000
   eureka:
     enabled: true
 
